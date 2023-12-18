@@ -8,7 +8,7 @@ module.exports = {
   },
   devServer: {
     port: 8080,
-    // contentBase: "www",
+    contentBase: "www",
     open: true, // 启动服务器时自动打开页面
   },
 };
