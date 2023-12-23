@@ -14,20 +14,12 @@ var patch = init([ // Init patch function with chosen modules
 
 var container = document.getElementById('container')
 
-var vnode = h('div#container.two.classes', { on: { click: ()=>{
-    console.log(123);
-} } }, [
-  h('span', { style: { fontWeight: 'bold' } }, 'This is bold'),
-  ' and this is just normal text',
-  h('a', { props: { href: '/foo' } }, 'I\'ll take you places!')
-])
-// Patch into empty DOM element – this modifies the DOM as a side effect
-patch(container, vnode)
+// 创建虚拟节点
 
-var newVnode = h('div#container.two.classes', { on: { click: ()=>{} } }, [
-  h('span', { style: { fontWeight: 'normal', fontStyle: 'italic' } }, 'This is now italic type'),
-  ' and this is still just normal text',
-  h('a', { props: { href: '/bar' } }, 'I\'ll take you places!')
-])
-// Second `patch` invocation
-patch(vnode, newVnode) // Snabbdom efficiently updates the old view to the new state
+const myNode = h('a',{props:{
+  href:'https://ys.mihoyo.com/?utm_source=adbdpz&from_channel=adbdpz#/'
+}},'元神，启动')
+console.log(myNode);
+
+// 上树
+patch(container,myNode)
