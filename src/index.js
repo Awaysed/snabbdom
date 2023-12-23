@@ -17,9 +17,12 @@ var container = document.getElementById('container')
 // 创建虚拟节点
 
 const myNode = h('a',{props:{
-  href:'https://ys.mihoyo.com/?utm_source=adbdpz&from_channel=adbdpz#/'
+  href:'https://ys.mihoyo.com/?utm_source=adbdpz&from_channel=adbdpz#/',
+  target: '_blank'
 }},'元神，启动')
 console.log(myNode);
 
+const myNode2 = h('div',{},'周莉')
 // 上树
-patch(container,myNode)
+// patch(container,myNode)
+patch(container,myNode2)
