@@ -22,7 +22,9 @@ const myNode = h('a',{props:{
 }},'元神，启动')
 console.log(myNode);
 
-const myNode2 = h('div',{},'周莉')
+const myNode2 = h('div',{
+  
+},'周莉')
 // 上树
 // patch(container,myNode)
 patch(container,myNode2)
