@@ -6,6 +6,7 @@ module.exports = {
     publicPath: "xuni",
     filename: "bundle.js",
   },
+  
   devServer: {
     port: 8080,
     contentBase: "www",
