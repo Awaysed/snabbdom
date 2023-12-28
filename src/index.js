@@ -28,3 +28,10 @@ const myNode2 = h('div',{
 // 上树
 // patch(container,myNode)
 patch(container,myNode2)
+
+
+
+// 自己写的代码
+import h2 from './h'
+const myvnode2 = h2('div',{})
+console.log(myvnode2);
