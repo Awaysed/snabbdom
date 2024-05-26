@@ -20,7 +20,7 @@ const myNode = h('a',{props:{
   href:'https://ys.mihoyo.com/?utm_source=adbdpz&from_channel=adbdpz#/',
   target: '_blank'
 }},'元神，启动')
-console.log(myNode);
+// console.log(myNode);
 
 const myNode2 = h('div',{
   
@@ -30,8 +30,14 @@ const myNode2 = h('div',{
 patch(container,myNode2)
 
 
-
+ 
 // 自己写的代码
 import h2 from './h'
-const myvnode2 = h2('div',{})
+// const myvnode2 = h2('div',{},1)
+const myvnode2 = h2('div',{},[
+  h2('a',{},'周莉1'),
+  h2('a',{},'周莉2'),
+  h2('a',{},'周莉3'),
+  h2('a',{},'周莉4'),
+])
 console.log(myvnode2);
