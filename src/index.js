@@ -29,7 +29,8 @@ const myNode2 = h('div',{
 // patch(container,myNode)
 patch(container,myNode2)
 
-
+// 1.只有同一虚拟节点时才进行比较(key相同 && 选择器相同)
+// 2.只进行同级 不进行跨级
  
 // 自己写的代码
 import h2 from './h'
