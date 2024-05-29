@@ -33,7 +33,7 @@ patch(container,myNode2)
 // 2.只进行同级 不进行跨级
  
 // 自己写的代码
-import h2 from './h'
+import h2 from './my-snabbdom/h'
 // const myvnode2 = h2('div',{},1)
 const myvnode2 = h2('div',{},[
   h2('a',{},'周莉1'),
