@@ -17,7 +17,9 @@ export default function (oldVnode, newVnode) {
   if (oldVnode.key == newVnode.key && oldVnode.sel == newVnode.sel) {
   } else {
     const newVnodeElm = createElement(newVnode);
-    console.log(2222,oldVnode,oldVnode.elm,newVnodeElm);
+    // 插入新节点
     oldVnode.elm.parentNode.insertBefore(newVnodeElm, oldVnode.elm);
+    // 删除老节点
+    oldVnode.elm.parentNode.removeChild(oldVnode.elm)
   }
 }
