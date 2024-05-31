@@ -2,7 +2,6 @@ import vnode from "./vnode";
 import createElement from "./createElement";
 export default function (oldVnode, newVnode) {
   // 判断第一个节点是Dom 还是虚拟节点
-  console.log(4444,oldVnode.sel);
   if (oldVnode.sel == "" || oldVnode.sel == undefined) {
     // 包装成虚拟节点
     
@@ -18,7 +17,7 @@ export default function (oldVnode, newVnode) {
   if (oldVnode.key == newVnode.key && oldVnode.sel == newVnode.sel) {
   } else {
     const newVnodeElm = createElement(newVnode);
-    console.log(2222,oldVnode,oldVnode.elm);
+    console.log(2222,oldVnode,oldVnode.elm,newVnodeElm);
     oldVnode.elm.parentNode.insertBefore(newVnodeElm, oldVnode.elm);
   }
 }
