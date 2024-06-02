@@ -9,3 +9,8 @@ const myVonde = h('ul',{},[
     h('h1',{},'呀'),
 ])
 patch(container,myVonde)
+const buttonVnode = h('div',{},'改变了')
+var Button = document.getElementById('button')
+Button.onclick =  function(){
+    patch(myVonde,buttonVnode)
+}
