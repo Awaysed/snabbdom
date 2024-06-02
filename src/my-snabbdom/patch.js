@@ -28,7 +28,20 @@ export default function (oldVnode, newVnode) {
       }
     } else {
       // 没有text属性
-      
+      // 判断老的有没有children
+      if(oldVnode.children != undefined && oldVnode.children.length == 0){
+        // 有
+
+      }else{
+        // 没有 新的有
+        oldVnode.elm.innerText = ''
+        for (let i = 0; i < newVnode.children.length; i++) {
+          const dom = createElement(newVnode.children[i])
+          oldVnode.elm.appendChild(dom)
+        }
+
+      }
+
     }
   } else {
     const newVnodeElm = createElement(newVnode);
