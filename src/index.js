@@ -8,7 +8,7 @@ const myVonde = h('ul',{},[
     h('h1',{},'好'),
     h('h1',{},'呀'),
 ])
-const buttonVnode = h('ul',{},[
+const buttonVnode = h('div',{},[
     h('h1',{},'你'),
     h('h1',{},'好'),
     h('h1',{},'呀'),
