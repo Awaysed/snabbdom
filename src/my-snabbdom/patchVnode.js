@@ -12,4 +12,16 @@ export default function (oldVnode, newVnode) {
       oldVnode.elm.innerText = newVnode.text;
     }
   }
+  {
+    // 老的有没有children
+    if (oldVnode.children != undefined || oldVnode.children.length > 0) {
+      // 有children，最复杂情况
+    } else {
+      elm.innerText = "";
+      for (let i = 0; i < newVnode.children; i++) {
+        const dom = createElement(newVnode.children[i]);
+        oldVnode.elm.appendChild(dom);
+      }
+    }
+  }
 }
