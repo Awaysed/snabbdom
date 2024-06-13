@@ -14,6 +14,7 @@ export default function (oldVnode, newVnode) {
   }
   {
     // 老的有没有children
+    
     if (oldVnode.children != undefined || oldVnode.children.length > 0) {
       // 有children，最复杂情况
     } else {
