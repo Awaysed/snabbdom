@@ -16,6 +16,8 @@ var container = document.getElementById('container')
 
 // 创建虚拟节点
 
+// 、、
+
 const myNode = h('a',{props:{
   href:'https://ys.mihoyo.com/?utm_source=adbdpz&from_channel=adbdpz#/',
   target: '_blank'
