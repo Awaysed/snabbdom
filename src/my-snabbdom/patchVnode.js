@@ -1,4 +1,5 @@
 import createElement from "./createElement";
+import updateChildren from './updateChildren'
 export default function (oldVnode, newVnode) {
   // 新旧Node是否为同一个对象
   if (oldVnode === newVnode) return;
@@ -17,6 +18,7 @@ export default function (oldVnode, newVnode) {
     
     if (oldVnode.children != undefined || oldVnode.children.length > 0) {
       // 有children，最复杂情况
+      updateChildren(oldVnode.elm,newVnode.children,oldVnode.children)
     } else {
       elm.innerText = "";
       for (let i = 0; i < newVnode.children; i++) {
