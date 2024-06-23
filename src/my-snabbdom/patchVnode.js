@@ -14,13 +14,13 @@ export default function (oldVnode, newVnode) {
     }
   }
   {
-    // 老的有没有children
+    // 老的有没有children  
     
-    if (oldVnode.children != undefined || oldVnode.children.length > 0) {
+    if (oldVnode.children !== undefined && oldVnode.children.length > 0) {
       // 有children，最复杂情况
       updateChildren(oldVnode.elm,newVnode.children,oldVnode.children)
     } else {
-      elm.innerText = "";
+      oldVnode.elm.innerText = "";
       for (let i = 0; i < newVnode.children; i++) {
         const dom = createElement(newVnode.children[i]);
         oldVnode.elm.appendChild(dom);
