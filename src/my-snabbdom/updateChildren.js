@@ -27,8 +27,9 @@ import patchVnode from './patchVnode'
         // 旧前-新前命中
         console.log('00000',oldCh,oldStartVnode,oldCh[0]);
         if(checkSameVnode(oldStartVnode,newStartVnode)){
+            console.log(7777,oldStartVnode,newStartVnode);
             patchVnode(oldStartVnode,newStartVnode)
-            oldStartVnode = oldCh[++oldStartVnode]
+            oldStartVnode = oldCh[++oldStartIdx]
             newStartVnode = newCh[++newStartIdx]
         }
     }
