@@ -13,9 +13,8 @@ export default function (oldVnode, newVnode) {
       oldVnode.elm.innerText = newVnode.text;
     }
   }
-  {
+  else{
     // 老的有没有children  
-    
     if (oldVnode.children !== undefined && oldVnode.children.length > 0) {
       // 有children，最复杂情况
       updateChildren(oldVnode.elm,newVnode.children,oldVnode.children)

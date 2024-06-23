@@ -1,6 +1,5 @@
 import patchVnode from './patchVnode' 
  function checkSameVnode(a,b) {
-    console.log(6666,a,b);
     return a.sel === b.sel  && a.key === b.key
     
  }
@@ -25,12 +24,11 @@ import patchVnode from './patchVnode'
     let newEndVnode = newCh[newEndIdx]
     while (oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx) {
         // 旧前-新前命中
-        console.log('00000',oldCh,oldStartVnode,oldCh[0]);
         if(checkSameVnode(oldStartVnode,newStartVnode)){
-            console.log(7777,oldStartVnode,newStartVnode);
             patchVnode(oldStartVnode,newStartVnode)
             oldStartVnode = oldCh[++oldStartIdx]
             newStartVnode = newCh[++newStartIdx]
         }
     }
- }
+}
+
