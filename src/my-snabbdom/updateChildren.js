@@ -29,6 +29,11 @@ import patchVnode from './patchVnode'
             oldStartVnode = oldCh[++oldStartIdx]
             newStartVnode = newCh[++newStartIdx]
         }
+        // 旧后-新后命中
+        else if(checkSameVnode(oldEndIdx,newEndVnode)){
+
+
+        }
     }
 }
 
