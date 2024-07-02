@@ -31,8 +31,9 @@ import patchVnode from './patchVnode'
         }
         // 旧后-新后命中
         else if(checkSameVnode(oldEndIdx,newEndVnode)){
-
-
+            patchVnode(oldEndIdx,newEndVnode)
+            oldEndVnode =  oldCh[--oldEndIdx] 
+            newEndVnode =  oldCh[--newEndIdx] 
         }
     }
 }
