@@ -36,11 +36,14 @@ import patchVnode from './patchVnode'
             newEndVnode =  oldCh[--newEndIdx] 
         }
         // 旧前-新后命中(将新前指向 --旧后之后)
-        else if(){
-
+        else if(checkSameVnode(oldStartVnode,newEndVnode)){
+            patchVnode(oldStartVnode,newEndVnode) // ?
+            parentElm.inserBefore(oldStartVnode,newEndVnode)
+            oldStartVnode =  oldCh[++oldStartIdx] 
+            newEndVnode =  oldCh[--newEndIdx] 
         }
-        // 旧后-新前
-        else if(){
+        // 旧后-新前(将新前移动-- 旧前之前)
+        else if(checkSameVnode(oldEndVnode,newStartVnode)){
             
         }
     }
