@@ -33,18 +33,21 @@ import patchVnode from './patchVnode'
         else if(checkSameVnode(oldEndIdx,newEndVnode)){
             patchVnode(oldEndIdx,newEndVnode)
             oldEndVnode =  oldCh[--oldEndIdx] 
-            newEndVnode =  oldCh[--newEndIdx] 
+            newEndVnode =  newCh[--newEndIdx] 
         }
         // 旧前-新后命中(将新前指向 --旧后之后)
         else if(checkSameVnode(oldStartVnode,newEndVnode)){
             patchVnode(oldStartVnode,newEndVnode) // ?
-            parentElm.inserBefore(oldStartVnode,newEndVnode)
+            parentElm.inserBefore(oldStartVnode.elm,newEndVnode.elm)
             oldStartVnode =  oldCh[++oldStartIdx] 
-            newEndVnode =  oldCh[--newEndIdx] 
+            newEndVnode =  newCh[--newEndIdx] 
         }
         // 旧后-新前(将新前移动-- 旧前之前)
         else if(checkSameVnode(oldEndVnode,newStartVnode)){
-            
+            patchVnode(oldEndVnode,newStartVnode) // ?
+            parentElm.inserBefore(oldStartVnode.lem,newStartVnode.elm)
+            oldEndVnode =  oldCh[--oldEndIdx] 
+            newStartVnode =  newCh[++newStartIdx] 
         }
     }
 }
