@@ -35,6 +35,14 @@ import patchVnode from './patchVnode'
             oldEndVnode =  oldCh[--oldEndIdx] 
             newEndVnode =  oldCh[--newEndIdx] 
         }
+        // 旧前-新后命中(将新前指向 --旧后之后)
+        else if(){
+
+        }
+        // 旧后-新前
+        else if(){
+            
+        }
     }
 }
 
