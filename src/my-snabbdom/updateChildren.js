@@ -23,6 +23,7 @@ import patchVnode from './patchVnode'
     // 新后节点
     let newEndVnode = newCh[newEndIdx]
     while (oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx) {
+        console.log('★');
         // 旧前-新前命中
         if(checkSameVnode(oldStartVnode,newStartVnode)){
             patchVnode(oldStartVnode,newStartVnode)
@@ -37,15 +38,16 @@ import patchVnode from './patchVnode'
         }
         // 旧前-新后命中(将新前指向 --旧后之后)
         else if(checkSameVnode(oldStartVnode,newEndVnode)){
+            console.log(3);
             patchVnode(oldStartVnode,newEndVnode) // ?
-            parentElm.inserBefore(oldStartVnode.elm,newEndVnode.elm)
+            parentElm.insertBefore(oldStartVnode.elm,newEndVnode.elm)
             oldStartVnode =  oldCh[++oldStartIdx] 
             newEndVnode =  newCh[--newEndIdx] 
         }
         // 旧后-新前(将新前移动-- 旧前之前)
         else if(checkSameVnode(oldEndVnode,newStartVnode)){
             patchVnode(oldEndVnode,newStartVnode) // ?
-            parentElm.inserBefore(oldStartVnode.lem,newStartVnode.elm)
+            parentElm.insertBefore(oldStartVnode.lem,newStartVnode.elm)
             oldEndVnode =  oldCh[--oldEndIdx] 
             newStartVnode =  newCh[++newStartIdx] 
         }
