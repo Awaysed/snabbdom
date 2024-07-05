@@ -7,7 +7,6 @@ export default function (sel,data,c) {
     if(typeof c =='string' || typeof c == 'number'){
         return vnode(sel,data,undefined,c,undefined)
     }
-
     
     if(Array.isArray(c)){
         let children =  []
