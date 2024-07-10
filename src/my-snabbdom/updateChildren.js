@@ -51,6 +51,14 @@ import patchVnode from './patchVnode'
             oldEndVnode =  oldCh[--oldEndIdx] 
             newStartVnode =  newCh[++newStartIdx] 
         }
+        // 插入新节点
+        else if(newStartIdx <= newEndIdx){
+            const before = newCh[newEndIdx + 1] == null ? null : newCh[newEndIdx + 1].elm
+            for (let i = newStartIdx; i < newEndIdx; i++) {
+                parentElm.insertBefore(newCh[i].lem,before)
+                
+            }
+        }
     }
 }
 
