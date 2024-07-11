@@ -55,18 +55,17 @@ import patchVnode from './patchVnode'
     }
      // 插入新节点(找到最后有多余的)
      if(newStartIdx <= newEndIdx){
-        console.log(6666,newEndIdx,);
-        const before = oldCh[newEndIdx + 1] == null ? null : oldCh[newEndIdx + 1].elm
-        console.log(6666,before,oldCh[newEndIdx + 1]);
-        for (let i = newStartIdx; i < newEndIdx; i++) {
-            parentElm.insertBefore(oldCh[i].lem,before)
+      
+        const before = oldCh[newEndIdx] == null ? null : oldCh[newEndIdx].elm
+        console.log(6666,before,newCh[newEndIdx + 1]);
+        for (let i = newStartIdx; i <= newEndIdx; i++) {
+            console.log(6666,newCh[i]);
+            parentElm.insertBefore(newCh[i].elm,before)
         }
     }
     else if(oldStartIdx <= oldEndIdx){
         for (let i = oldStartIdx; i <= oldEndIdx; i++) {
             parentElm.removeChild(oldCh[i])
         }
-
     }
 }
-
