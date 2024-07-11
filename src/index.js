@@ -11,9 +11,10 @@ const myVonde = h('ul',{},[
     h('h1',{key:'C'},'呀'),
 ])
 const buttonVnode = h('ul',{},[
-    h('h1',{key:'C'},'呀1'),
-    h('h1',{key:'B'},'好'),
     h('h1',{key:'A'},'你'),
+    h('h1',{key:'B'},'好'),
+    h('h1',{key:'C'},'呀'),
+    h('h1',{key:'d'},'刘'),
 ])
 patch(container,myVonde)
 var Button = document.getElementById('button')

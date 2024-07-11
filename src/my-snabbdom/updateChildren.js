@@ -23,7 +23,7 @@ import patchVnode from './patchVnode'
     // 新后节点
     let newEndVnode = newCh[newEndIdx]
     while (oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx) {
-        console.log('★');
+        console.log('★',newStartIdx,newEndIdx,oldStartIdx,oldEndIdx);
         // 旧前-新前命中
         if(checkSameVnode(oldStartVnode,newStartVnode)){
             patchVnode(oldStartVnode,newStartVnode)
@@ -51,14 +51,22 @@ import patchVnode from './patchVnode'
             oldEndVnode =  oldCh[--oldEndIdx] 
             newStartVnode =  newCh[++newStartIdx] 
         }
-        // 插入新节点
-        else if(newStartIdx <= newEndIdx){
-            const before = newCh[newEndIdx + 1] == null ? null : newCh[newEndIdx + 1].elm
-            for (let i = newStartIdx; i < newEndIdx; i++) {
-                parentElm.insertBefore(newCh[i].lem,before)
-                
-            }
+       
+    }
+     // 插入新节点(找到最后有多余的)
+     if(newStartIdx <= newEndIdx){
+        console.log(6666,newEndIdx,);
+        const before = oldCh[newEndIdx + 1] == null ? null : oldCh[newEndIdx + 1].elm
+        console.log(6666,before,oldCh[newEndIdx + 1]);
+        for (let i = newStartIdx; i < newEndIdx; i++) {
+            parentElm.insertBefore(oldCh[i].lem,before)
         }
+    }
+    else if(oldStartIdx <= oldEndIdx){
+        for (let i = oldStartIdx; i <= oldEndIdx; i++) {
+            parentElm.removeChild(oldCh[i])
+        }
+
     }
 }
 
