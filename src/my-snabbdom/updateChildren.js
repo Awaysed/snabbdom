@@ -51,6 +51,10 @@ import patchVnode from './patchVnode'
             oldEndVnode =  oldCh[--oldEndIdx] 
             newStartVnode =  newCh[++newStartIdx] 
         }
+        // 四种都没有命中
+        else{
+
+        }
        
     }
      // 插入新节点(找到最后有多余的)
