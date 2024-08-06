@@ -52,6 +52,7 @@ import patchVnode from './patchVnode'
             newStartVnode =  newCh[++newStartIdx] 
         }
         // 四种都没有命中
+        
         else{
 
         }
