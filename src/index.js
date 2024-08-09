@@ -8,6 +8,7 @@ console.log(333,container);
 const myVonde = h('ul',{},[
     h('h1',{key:'A'},'你'),
     h('h1',{key:'B'},'好'),
+    // h('h1',{key:'f'},'和'),
     h('h1',{key:'C'},'呀'),
 ])
 const buttonVnode = h('ul',{},[
